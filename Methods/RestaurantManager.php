@@ -1,4 +1,4 @@
-<?
+<?php
 
 	use Parse\ParseQuery;
 	use Parse\ParseObject;
