@@ -10,5 +10,5 @@ before_script:
 script:
  - mkdir -p build/logs
  - cd unittest/
- - phpunit unittest/TestAddingRestaurants.php
- - phpunit unittest/TestGettingRestaurants.php
+ - phpunit TestAddingRestaurants
+ - phpunit TestGettingRestaurants
