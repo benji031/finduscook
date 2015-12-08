@@ -6,7 +6,7 @@ use Parse\ParseGeoPoint;
 
 include 'IncludeParse.php';
 
-class Restaurant{
+class Restaurant {
 
 	private $_latitude;
 	private $_longitude;
@@ -26,11 +26,10 @@ class Restaurant{
 		$this->_isFast = $isFast;
 		$this->_address = $address;
 		$this->_city = $city;
-		$this->_coord = $coord;
+		$this->_coord = new ParseGeoPoint(floatval($latitude),floatval($longitude));
 		$this->_description = $description;
 		$this->_isFast = $isFast;
 		$this->_nom = $nom;
-		echo "je t'aime pas > " + $this->_nom;
 		$this->_postal = $postal;
 		$this->_website = $website;
 		$this->_isValidated = false;
@@ -39,15 +38,14 @@ class Restaurant{
 
 
 	function add(){
-		echo $this->_nom;
-		$coordonees = new ParseGeoPoint(floatval($this->_latitude),floatval($this->_longitude));
+		
 		$resto = new ParseObject("Restaurant");
-		$isFast = ($this->_isFast == "true")?true:false;
+		$myIsFast = ($this->_isFast == "true")?true:false;
 		$resto->set("address",$this->_address);
 		$resto->set("city",$this->_city);
-		$resto->set("coord",$this->coordonees);
+		$resto->set("coord",$this->_coord);
 		$resto->set("description",$this->_description);
-		$resto->set("fast",$this->$isFast);
+		$resto->set("fast",$myIsFast);
 		$resto->set("name",$this->_nom);
 		$resto->set("postal",$this->_postal);
 		$resto->set("website",$this->_website);
@@ -55,7 +53,7 @@ class Restaurant{
 
 		try {
 		  $resto->save();
-		  echo 'New object created with objectId: ' . $resto->getObjectId();
+		  return $resto->getObjectId();
 		} catch (ParseException $ex) {
 		  // Execute any logic that should take place if the save fails.
 		  // error is a ParseException object with an error code and message.
@@ -63,10 +61,4 @@ class Restaurant{
 		}
 	}
 }
-
-echo var_dump($_POST);
-
-$myRest = new Restaurant($_POST['latitude'], $_POST['longitude'], $_POST['fast'], $_POST['adresse'], $_POST['city'], $_POST['description'], $_POST['name'], $_POST['postal'], $_POST['website']);
-
-$myRest->add();
 ?>

@@ -5,58 +5,22 @@
 .logo
 {
     display: block;
-    margin:20px auto;
-
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 #page
 {
+
+    padding-left: 5%;
     font-size: 17px;
-}
 
-#form
-{
-    width: 210px;
-    margin: auto;
-}
-
-.findme{
-    font-size: 26px!important;
-    font-family: 'Cookie', cursive;
-    color: #337AB7!important;
-
-}
-p{
-    font-size: 20px;
-    text-align: center;
-    font-family: 'Fredoka One', cursive;
-    color: #e84743;
 }
 
 body{
     background-image:  url(motif_navbar.jpg);
-
+    overflow-x: hidden
 }
-
-#scalient{
-    background-color: #FFF;
-    border: 1px solid #000;
-    width: 350px;
-    margin: auto;
-    padding-bottom: 20px;
-    margin-top: 10px;
-}
-
-.row{
-  margin-right: 0px!important;
-  margin-left: 0px!important;
-}
-
-
-.img_find{
-  display: block;
-  margin: auto;
-}
-
 
 .restoInfo{
 	text-align: center;
@@ -67,18 +31,6 @@ body{
 	margin: auto;
 }
 
-.btn_find{
-  margin-top: 15px;
-}
-
-.well{
-  width: 350px;
-  margin: auto;
-}
-
-#ex1Slider{
-  margin-top: 20px;
-}
 #critere {
 	text-align: left;
 }
