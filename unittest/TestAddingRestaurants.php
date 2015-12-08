@@ -1,6 +1,7 @@
 <?php
 
 use Parse\ParseQuery;
+var_dump(scandir(".."));
 
 require('../Methods/Restaurant.php');
 
