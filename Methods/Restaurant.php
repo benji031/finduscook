@@ -29,7 +29,7 @@ class Restaurant {
 		$this->_coord = new ParseGeoPoint(floatval($latitude),floatval($longitude));
 		$this->_description = $description;
 		$this->_isFast = $isFast;
-		$this->_nom = $nom;
+		$this->_nom = $name;
 		$this->_postal = $postal;
 		$this->_website = $website;
 		$this->_isValidated = false;
