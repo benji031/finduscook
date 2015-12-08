@@ -26,8 +26,6 @@ class Test extends PHPUnit_Framework_TestCase
         $this->assertEquals("Unit tests", $resto->get("name"));
         $this->assertEquals("32456", $resto->get("postal"));
         $this->assertEquals("http://www.facebook.com", $resto->get("website"));
-
-
     }
 }
 ?>

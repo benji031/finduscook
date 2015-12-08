@@ -1,6 +1,6 @@
 <?php
 
-require('../Methods/RestaurantManager.php');
+require(__DIR__.'/../Methods/RestaurantManager.php');
 
 class TestGettingRestaurants extends PHPUnit_Framework_TestCase
 {

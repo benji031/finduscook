@@ -4,7 +4,7 @@
 	use Parse\ParseObject;
 	use Parse\ParseGeoPoint;
 
-	include 'IncludeParse.php';
+	include __DIR__.'/IncludeParse.php';
 
 	class RestaurantManager{
 

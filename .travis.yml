@@ -10,3 +10,4 @@ before_script:
 script:
  - mkdir -p build/logs
  - phpunit unittest/TestAddingRestaurants.php
+ - phpunit unittest/TestGettingRestaurants.php
