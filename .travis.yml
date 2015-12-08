@@ -1,6 +1,5 @@
 language: php
 php:
- - 5.3
  - 5.4
  - 5.5
 
@@ -10,4 +9,4 @@ before_script:
 
 script:
  - mkdir -p build/logs
- - phpunit --coverage-clover build/logs/clover.xml --color UnitTest unittest/TestAddingRestaurants.php
+ - phpunit unittest/TestAddingRestaurants.php
