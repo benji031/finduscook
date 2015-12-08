@@ -1,65 +1,61 @@
 <?php
 
-	use Parse\ParseQuery;
-	use Parse\ParseObject;
-	use Parse\ParseGeoPoint;
+    use Parse\ParseQuery;
+    use Parse\ParseObject;
+    use Parse\ParseGeoPoint;
 
-	include __DIR__.'/IncludeParse.php';
+    include __DIR__.'/IncludeParse.php';
 
-	class RestaurantManager{
-
-
-		var $latitude;
-		var $longitude;
-
-		function __construct($latitude,$longitude){
-			$this->latitude=$latitude;
-			$this->longitude=$longitude;
-		}
+    class RestaurantManager{
 
 
-		function getAllRestaurantsAround($klm){
+        var $latitude;
+        var $longitude;
 
-			try {
-
-				$userPos = new ParseGeoPoint(floatval($this->latitude),floatval($this->longitude));
-
-
-				$query = new ParseQuery("Restaurant");
-
-				$query->withinKilometers("coord", $userPos,$klm);
-		
-		// Final array of objects
-				$results = $query->find();
+        function __construct($latitude,$longitude){
+            $this->latitude=$latitude;
+            $this->longitude=$longitude;
+        }
 
 
-				if($results != null){
-					return $results;
-				}
-			
-			}
-			catch (ParseException $ex){
-				echo $ex;
-			}	
+        function getAllRestaurantsAround($klm){
 
-		return null;
-	}
+            try {
 
-		function getRandomRestaurantArround($klm){
+                $userPos = new ParseGeoPoint(floatval($this->latitude),floatval($this->longitude));
 
-			$listRestaurant = $this->getAllRestaurantsAround($klm);
 
-			if($listRestaurant != null){
-				$random= rand(0,count($listRestaurant)-1);
+                $query = new ParseQuery("Restaurant");
 
-				return $listRestaurant[$random];
-			}
+                $query->withinKilometers("coord", $userPos,$klm);
+                $results = $query->find();
 
-			return null;
-			
-		}
+
+                if($results != null){
+                    return $results;
+                }
+
+            }
+            catch (ParseException $ex){
+                echo $ex;
+            }
+
+        return null;
+    }
+
+        function getRandomRestaurantArround($klm){
+
+            $listRestaurant = $this->getAllRestaurantsAround($klm);
+
+            if($listRestaurant != null){
+                $random= rand(0,count($listRestaurant)-1);
+
+                return $listRestaurant[$random];
+            }
+
+            return null;
+
+        }
 
 }
-
-
 ?>
