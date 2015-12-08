@@ -11,4 +11,4 @@ script:
  - cd unittest/
  - mkdir -p build/logs
  - phpunit --coverage-text --coverage-clover build/logs/clover.xml TestAddingRestaurants
- - phpunit TestGettingRestaurants
+ - phpunit --coverage-text --coverage-clover build/logs/clover.xml TestGettingRestaurants
