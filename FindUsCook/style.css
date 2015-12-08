@@ -1,0 +1,22 @@
+.button
+{
+    margin-top: 10px;
+}
+#logo
+{
+    display: block;
+    padding-top: 20px;
+    margin: auto;
+    margin-bottom: 20px;
+}
+#page
+{
+
+    padding-left: 5%;
+
+}
+
+body{
+    background-image:  url(motif_navbar.jpg);
+    overflow-x: hidden
+}
