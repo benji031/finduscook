@@ -1,9 +1,8 @@
 <?php
 
 use Parse\ParseQuery;
-var_dump(scandir(".."));
 
-require('../Methods/Restaurant.php');
+require(__DIR__.'/../Methods/Restaurant.php');
 
 class Test extends PHPUnit_Framework_TestCase
 {
