@@ -3,13 +3,13 @@
 <head>
 	
 	<meta charset="utf-8" />
-  <link href="style.css" rel="stylesheet" media="all" type="text/css">
-  <link href="bootstrap.css" rel="stylesheet" media="all" type="text/css">
-  <link href="bootstrap-slider-master/css/bootstrap-slider.css" rel="stylesheet">
-  <link href="bootstrap-slider-master/dependencies/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.css">
-  <link href='https://fonts.googleapis.com/css?family=Fredoka+One' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Cookie' rel='stylesheet' type='text/css'>
+	<link href="bootstrap.css" rel="stylesheet" media="all" type="text/css">
+	<link href="bootstrap-slider-master/css/bootstrap-slider.css" rel="stylesheet">
+	<link href="bootstrap-slider-master/dependencies/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.css">
+    <link href='https://fonts.googleapis.com/css?family=Fredoka+One' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Cookie' rel='stylesheet' type='text/css'>
+	<link href="style.css" rel="stylesheet" media="all" type="text/css">
 
 	<title>Resto Aléatoire</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -37,7 +37,7 @@
 	<div class="container">
 		
 		<div class="row">
-			<div class="col-md-6 col-md-offset-3">
+			<div class="col-md-12">
 				<?php echo "<img class='img_find' src=\"".$restau->get("picture")->getURL()."\"/>";?>
 				<div class="row">
 					<h3 class="restoInfo"><?php echo $restau->get("name");?></h3>		
@@ -53,7 +53,7 @@
 								</div>
 
 								<div class="row">
-									<button class="btn btn-default buttoncenter findme" role="button" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Change "critères"</button>
+									<button class="btn btn-default buttoncenter findme" role="button" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Changez les "critères"</button>
 								</div>	
 							</div>
 						</div>
@@ -64,37 +64,46 @@
 									<div class="row">
 										<div class="collapse" id="collapseExample">
 											<div class="well">
-												<p>Type de restaurant :</p>
-												<label><input type="checkbox" name="optionsCheckbox" id="optionsCheckbox1" value="pizza"> Pizza
-												</label></br>
+                            <div class="type">
+                                <p>Type de restaurant :</p>
+                                <div class="checkbox checkbox-primary">
+                                    <input type="checkbox" name="optionsCheckbox"  id="optionsCheckbox1" value="pizza">
+                                    <label for="optionsCheckbox1">Pizza</label>
+                                </div>
 
-												<label><input type="checkbox" name="optionsCheckbox" id="optionsCheckbox2" value="sushi"> Sushi
-												</label></br>
 
-												<label><input type="checkbox" name="optionsCheckbox" id="optionsCheckbox3" value="fastfood"> Fast Food
-												</label></br>
+                                <div class="checkbox checkbox-primary">
+                                    <input type="checkbox" name="optionsCheckbox" id="optionsCheckbox2" value="sushi">
+                                    <label for="optionsCheckbox2">Sushi</label>
+                                </div>
 
-												<p>Pressé(e) ?</p>
-												<div class="radio">
-													<label>
-														<input type="radio" name="optionsradio" id="optionsradio1" value="oui" checked> Oui
-													</label>
-												</div>
-												<div class="radio">
-													<label>
-														<input type="radio" name="optionsradio" id="optionsradio2" value="non"> Non
-													</label>
-												</div>    
 
-												<div class="slider-example">
-													<p>Distance (km) :</p>
-													<input id="ex8" data-slider-id='ex1Slider' type="text" data-slider-min="1" data-slider-max="50" data-slider-step="1" data-slider-value="30"/>
-												</div>
-												<input id="lattitude" name="lattitude" type="hidden" />
-                            					<input id="longitude" name="longitude" type="hidden" />
+                                <div class="checkbox checkbox-primary">
+                                    <input type="checkbox" name="optionsCheckbox" id="optionsCheckbox3" value="fastfood">
+                                    <label for="optionsCheckbox3">Fast Food</label>
+                                </div>
+                            </div>
+                            <p>Pressé(e) ?</p>
+                            <div class="radio">
+
+                                <input type="radio" name="optionsradio" id="optionsradio1" value="oui" checked>
+                                <label for="optionsradio1">Oui</label>
+                            </div>
+                            <div class="radio">
+
+                                <input type="radio" name="optionsradio" id="optionsradio2" value="non">
+                                <label for="optionsradio2">Non</label>
+                            </div>                
+                            <div class="slider-example">
+                                <p>Distance :</p><br/>
+                                <input id="ex8" name="km" data-slider-id='ex1Slider' type="text" data-slider-min="1" data-slider-max="50" data-slider-step="1" data-slider-value="10"/>
+                            </div>
+                            <input id="lattitude" name="lattitude" type="hidden" />
+                            <input id="longitude" name="longitude" type="hidden" />
+                           
 											</div>
 										</div>            
-										<button class="btn btn-default buttoncenter findme btn_find" type="submit">Find me a restaurant</button>
+										<button class="btn btn-default buttoncenter findme btn_find" type="submit">Trouve moi un restau !</button>
 									</div>
 								</form>
 							</div>

@@ -8,7 +8,7 @@ before_script:
  - php composer.phar install --no-interaction
 
 script:
- - mkdir -p build/logs
  - cd unittest/
- - phpunit TestAddingRestaurants
+ - mkdir -p build/logs
+ - phpunit -c ./ --coverage-text --coverage-clover build/logs/clover.xml UnitTest TestAddingRestaurants
  - phpunit TestGettingRestaurants

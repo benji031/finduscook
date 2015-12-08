@@ -28,6 +28,7 @@
                 $query = new ParseQuery("Restaurant");
 
                 $query->withinKilometers("coord", $userPos,$klm);
+                $query->equalTo("validated", true);
                 $results = $query->find();
 
 
