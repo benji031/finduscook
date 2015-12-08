@@ -10,5 +10,5 @@ before_script:
 script:
  - cd unittest/
  - mkdir -p build/logs
- - phpunit -c ./ --coverage-text --coverage-clover build/logs/clover.xml UnitTest TestAddingRestaurants
+ - phpunit -c ./ --coverage-text --coverage-clover build/logs/clover.xml TestAddingRestaurants
  - phpunit TestGettingRestaurants
