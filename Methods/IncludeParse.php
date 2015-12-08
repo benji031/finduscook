@@ -1,5 +1,5 @@
 <?php
-require '../vendor/parse/php-sdk/autoload.php';
+require __DIR__.'/../vendor/parse/php-sdk/autoload.php';
 
 use Parse\ParseClient;
 
