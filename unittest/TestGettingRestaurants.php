@@ -8,6 +8,9 @@ class TestGettingRestaurants extends PHPUnit_Framework_TestCase
     {
         $resto_manager = new RestaurantManager(12.0, 13.4);
 
+        $this->assertEquals(12.0, $resto_manager->latitude);
+        $this->assertEquals(13.4, $resto_manager->longitude);
+
         $list_restos = $resto_manager->getAllRestaurantsAround(1);
 
         //var_dump($list_restos);
