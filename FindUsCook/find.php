@@ -37,78 +37,91 @@
 	<div class="container">
 		
 		<div class="row">
-			<div class="col-md-12">
-				<?php echo "<img class='img_find' src=\"".$restau->get("picture")->getURL()."\"/>";?>
+			<div class="col-xs-12">
+				<?php 
+				if ($restau == null) {
+					echo "<h3 class=\"restoInfo\">Pas de restau !</h3>";
+				}
+				else {
+					?>
+					<?php echo "<img class='img_find' src=\"".$restau->get("picture")->getURL()."\"/>";?>
 				<div class="row">
 					<h3 class="restoInfo"><?php echo $restau->get("name");?></h3>		
+				</div>
+				<div class="row">
+					<h4 class="restoInfo"><?php echo $restau->get("address");?>, <?php echo $restau->get("postal"); echo $restau->get("city");?></h2>		
 					</div>
 					<div class="row">
-						<h4 class="restoInfo"><?php echo $restau->get("address");?>, <?php echo $restau->get("postal"); echo $restau->get("city");?></h2>		
-						</div>
-						<div class="row">
-							<h4 class="restoInfo"><?php echo $restau->get("website");?></h4>		
-							</div>
-							<div class="row">
-								<h5 class="restoInfo"><?php echo $restau->get("description");?></h5>		
-								</div>
-
-								<div class="row">
-									<button class="btn btn-default buttoncenter findme" role="button" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Changez les "critères"</button>
-								</div>	
-							</div>
-						</div>
-
-						<div class="row">
-							<div class="col-md-4 col-md-offset-4">
-								<form action="find.php" method="post" accept-charset="utf-8">
-									<div class="row">
-										<div class="collapse" id="collapseExample">
-											<div class="well">
-                            <div class="type">
-                                <p>Type de restaurant :</p>
-                                <div class="checkbox checkbox-primary">
-                                    <input type="checkbox" name="optionsCheckbox"  id="optionsCheckbox1" value="pizza">
-                                    <label for="optionsCheckbox1">Pizza</label>
-                                </div>
-
-
-                                <div class="checkbox checkbox-primary">
-                                    <input type="checkbox" name="optionsCheckbox" id="optionsCheckbox2" value="sushi">
-                                    <label for="optionsCheckbox2">Sushi</label>
-                                </div>
-
-
-                                <div class="checkbox checkbox-primary">
-                                    <input type="checkbox" name="optionsCheckbox" id="optionsCheckbox3" value="fastfood">
-                                    <label for="optionsCheckbox3">Fast Food</label>
-                                </div>
-                            </div>
-                            <p>Pressé(e) ?</p>
-                            <div class="radio">
-
-                                <input type="radio" name="optionsradio" id="optionsradio1" value="oui" checked>
-                                <label for="optionsradio1">Oui</label>
-                            </div>
-                            <div class="radio">
-
-                                <input type="radio" name="optionsradio" id="optionsradio2" value="non">
-                                <label for="optionsradio2">Non</label>
-                            </div>                
-                            <div class="slider-example">
-                                <p>Distance :</p><br/>
-                                <input id="ex8" name="km" data-slider-id='ex1Slider' type="text" data-slider-min="1" data-slider-max="50" data-slider-step="1" data-slider-value="10"/>
-                            </div>
-                            <input id="lattitude" name="lattitude" type="hidden" />
-                            <input id="longitude" name="longitude" type="hidden" />
-                           
-											</div>
-										</div>            
-										<button class="btn btn-default buttoncenter findme btn_find" type="submit">Trouve moi un restau !</button>
-									</div>
-								</form>
-							</div>
-						</div>
+						<?php echo "<a class='lien_restau' target='_blank' href=\"".$restau->get("website")."\">Lien vers le site Web</a>" ?>
+					
 					</div>
+					<div class="row">
+						<h5 class="restoInfo"><?php echo $restau->get("description");?></h5>		
+					</div>
+
+					<div class="row">
+						<button class="btn btn-default buttoncenter findme" role="button" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Changez les "critères"</button>
+					</div>	
+				</div>
+					
+					<?php
+				}
+				?>
+				
+			</div>
+
+			<div class="row">
+				<div class="col-md-4 col-md-offset-4">
+					<form action="find.php" method="post" accept-charset="utf-8">
+						<div class="row">
+							<div class="collapse" id="collapseExample">
+								<div class="well">
+									<div class="type">
+										<p>Type de restaurant :</p>
+										<div class="checkbox checkbox-primary">
+											<input type="checkbox" name="optionsCheckbox"  id="optionsCheckbox1" value="pizza">
+											<label for="optionsCheckbox1">Pizza</label>
+										</div>
+
+
+										<div class="checkbox checkbox-primary">
+											<input type="checkbox" name="optionsCheckbox" id="optionsCheckbox2" value="sushi">
+											<label for="optionsCheckbox2">Sushi</label>
+										</div>
+
+
+										<div class="checkbox checkbox-primary">
+											<input type="checkbox" name="optionsCheckbox" id="optionsCheckbox3" value="fastfood">
+											<label for="optionsCheckbox3">Fast Food</label>
+										</div>
+									</div>
+									<p>Pressé(e) ?</p>
+									<div class="radio">
+
+										<input type="radio" name="optionsradio" id="optionsradio1" value="oui" checked>
+										<label for="optionsradio1">Oui</label>
+									</div>
+									<div class="radio">
+
+										<input type="radio" name="optionsradio" id="optionsradio2" value="non">
+										<label for="optionsradio2">Non</label>
+									</div>                
+									<div class="slider-example">
+										<p>Distance :</p><br/>
+										<input id="ex8" name="km" data-slider-id='ex1Slider' type="text" data-slider-min="1" data-slider-max="50" data-slider-step="1" data-slider-value="10"/>
+									</div>
+									<input id="lattitude" name="lattitude" type="hidden" />
+									<input id="longitude" name="longitude" type="hidden" />
+
+								</div>
+							</div>            
+							<button class="btn btn-default buttoncenter findme btn_find" type="submit">Trouve moi un restau !</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+
 
 					<script type="text/javascript" src="bootstrap-slider-master/dependencies/js/jquery.min.js"></script>
     				<script type="text/javascript" src="bootstrap-slider-master/js/bootstrap-slider.js"></script>
